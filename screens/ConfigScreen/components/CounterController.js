@@ -5,6 +5,8 @@ import { ACTIONS } from '../../../services/redux/actions';
 import { store } from '../../../services/redux/store';
 import { styles } from '../styles';
 
+import { FontAwesome } from '@expo/vector-icons';
+
 const CounterController = () => {
   const notificationService = useNotificationService();
 
@@ -30,18 +32,29 @@ const CounterController = () => {
       <View style={styles.topActions}>
         <View style={styles.actionButton}>
           <TouchableOpacity onPress={handleDecrementCounter}>
-            <Text style={styles.buttonLabel}>Decrement counter</Text>
+            <View style={styles.buttonViewContainer}>
+              <Text style={styles.buttonLabel}>Decrement counter</Text>
+              <FontAwesome name="minus" color="#de2928" size={24} />
+            </View>
           </TouchableOpacity>
         </View>
         <View style={styles.actionButton}>
           <TouchableOpacity onPress={handleIncrementCounter}>
-            <Text style={styles.buttonLabel}>Increment counter</Text>
+            <View style={styles.buttonViewContainer}>
+              <Text style={styles.buttonLabel}>Increment counter</Text>
+              <FontAwesome name="plus" color="#22de92" size={24} />
+            </View>
           </TouchableOpacity>
         </View>
       </View>
       <View style={styles.actionButton}>
         <TouchableOpacity onPress={handleResetCounter}>
-          <Text style={styles.buttonLabel}>Reset counter</Text>
+          <View
+            style={[styles.buttonViewContainer, { justifyContent: 'center' }]}
+          >
+            <Text style={styles.buttonLabel}>Reset counter</Text>
+            <Text style={styles.resetIconLabel}>0</Text>
+          </View>
         </TouchableOpacity>
       </View>
     </>

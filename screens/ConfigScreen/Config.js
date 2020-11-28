@@ -7,6 +7,7 @@ import { ACTIONS } from '../../services/redux/actions';
 import { store } from '../../services/redux/store';
 import CounterController from './components/CounterController';
 import CountersManager from './components/CountersManager';
+import CurrentCounterStats from './components/CurrentCounterStats';
 import { styles } from './styles';
 
 const Config = () => {
@@ -14,6 +15,7 @@ const Config = () => {
     return (
       <View style={styles.actionsContainer}>
         <CountersManager />
+        <CurrentCounterStats />
         <CounterController />
       </View>
     );

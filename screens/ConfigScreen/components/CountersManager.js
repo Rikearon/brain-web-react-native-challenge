@@ -5,6 +5,8 @@ import { ACTIONS } from '../../../services/redux/actions';
 import { store } from '../../../services/redux/store';
 import { styles } from '../styles';
 
+import { FontAwesome } from '@expo/vector-icons';
+
 const CountersManager = () => {
   const notificationService = useNotificationService();
 
@@ -24,12 +26,18 @@ const CountersManager = () => {
     <View style={styles.topActions}>
       <View style={styles.actionButton}>
         <TouchableOpacity onPress={handleDeleteCounter}>
-          <Text style={styles.buttonLabel}>Remove counter</Text>
+          <View style={styles.buttonViewContainer}>
+            <Text style={styles.buttonLabel}>Remove counter</Text>
+            <FontAwesome name="minus" color="#de2928" size={24} />
+          </View>
         </TouchableOpacity>
       </View>
       <View style={styles.actionButton}>
         <TouchableOpacity onPress={handleAddCounter}>
-          <Text style={styles.buttonLabel}>Add counter</Text>
+          <View style={styles.buttonViewContainer}>
+            <Text style={styles.buttonLabel}>Add counter</Text>
+            <FontAwesome name="plus" color="#22de92" size={24} />
+          </View>
         </TouchableOpacity>
       </View>
     </View>

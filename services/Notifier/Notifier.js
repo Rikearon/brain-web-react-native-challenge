@@ -1,19 +1,22 @@
 import React, { forwardRef, useEffect, useState } from 'react';
 
 import { Snackbar } from 'react-native-paper';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { connect } from 'react-redux';
-import { ACTIONS } from '../redux/actions';
+import { notifications } from './notificationTypes';
 
 const Notifier = (props, ref) => {
   const [notificationType, setNotificationType] = useState('');
   const [visible, setVisible] = useState(false);
+
+  const insets = useSafeAreaInsets();
 
   const { selectedCounter, counters } = props;
 
   useEffect(() => {
     setTimeout(() => {
       setVisible(false);
-    }, 900);
+    }, 1200);
   }, [visible]);
 
   const notify = (notificationType) => {
@@ -24,17 +27,10 @@ const Notifier = (props, ref) => {
 
   if (ref) ref.current = { notify };
 
-  const notifications = {
-    [ACTIONS.ADD_COUNTER]: `Counter added, now there are ${counters.length} counters.`,
-    [ACTIONS.DELETE_COUNTER]: `Counter deleted, now there are ${counters.length} counters.`,
-    [ACTIONS.INCREMENT_COUNTER]: `Incremented count at ${selectedCounter} position, to: ${counters[selectedCounter]}`,
-    [ACTIONS.DECREMENT_COUNTER]: `Decremented count at ${selectedCounter} position, to: ${counters[selectedCounter]}`,
-    [ACTIONS.RESET_COUNTER]: `The counter at position ${selectedCounter} has been reset.`,
-    [ACTIONS.SELECT_COUNTER]: `Counter added, now there are ${counters.length} counters`,
-  };
-
   return (
-    <Snackbar visible={visible}>{notifications[notificationType]}</Snackbar>
+    <Snackbar visible={visible} style={{ marginBottom: insets.bottom + 20 }}>
+      {notifications(selectedCounter, counters)[notificationType]}
+    </Snackbar>
   );
 };
 

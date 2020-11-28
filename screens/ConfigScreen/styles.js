@@ -33,4 +33,11 @@ export const styles = StyleSheet.create({
   },
   actionsContainer: { flex: 1, justifyContent: 'flex-start' },
   container: { flex: 1 },
+  buttonViewContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    paddingRight: 5,
+  },
+  resetIconLabel: { color: '#00d', fontWeight: '900', fontSize: 24 },
 });

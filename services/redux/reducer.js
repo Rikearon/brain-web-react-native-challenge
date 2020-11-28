@@ -22,6 +22,7 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         counters: state.counters.splice(state.selectedCounter, 1),
+        selectedCounter: Math.min(state.selectedCounter - 1, 0),
       };
 
     case ACTIONS.INCREMENT_COUNTER:

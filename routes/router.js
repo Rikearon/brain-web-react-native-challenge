@@ -5,14 +5,40 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Config from '../screens/ConfigScreen/Config';
 import { Counter } from '../screens/Counter';
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 const Tab = createBottomTabNavigator();
 
 export default function TabsRouter() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={Counter} />
-        <Tab.Screen name="Settings" component={Config} />
+        <Tab.Screen
+          name="Counters"
+          component={Counter}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons
+                name="counter"
+                color={color}
+                size={size}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Manager"
+          component={Config}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons
+                name="settings"
+                color={color}
+                size={size}
+              />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React, { useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 
 import TabsRouter from './routes/router';
@@ -15,10 +16,12 @@ export default function App() {
   return (
     <>
       <Provider store={store}>
-        <NotificationContext.Provider value={notificationRef}>
-          <TabsRouter />
-        </NotificationContext.Provider>
-        <Notifier ref={notificationRef} />
+        <SafeAreaProvider>
+          <NotificationContext.Provider value={notificationRef}>
+            <TabsRouter />
+          </NotificationContext.Provider>
+          <Notifier ref={notificationRef} />
+        </SafeAreaProvider>
       </Provider>
     </>
   );
