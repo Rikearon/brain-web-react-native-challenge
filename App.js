@@ -1,13 +1,26 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
+
+import TabsRouter from './routes/router';
+import { Notifier, NotificationContext } from './services/Notifier';
+
+import { store } from './services/redux/store';
 
 export default function App() {
+  const notificationRef = useRef(null);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <Provider store={store}>
+        <NotificationContext.Provider value={notificationRef}>
+          <TabsRouter />
+        </NotificationContext.Provider>
+        <Notifier ref={notificationRef} />
+      </Provider>
+    </>
   );
 }
 
