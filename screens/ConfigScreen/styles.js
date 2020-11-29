@@ -3,10 +3,11 @@ import { StyleSheet } from 'react-native';
 const CARD_BORDER_RADIUS = 10;
 
 export const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#0082cb' },
   actionButton: {
     borderRadius: CARD_BORDER_RADIUS,
     marginBottom: 15,
-    backgroundColor: '#fff',
+    backgroundColor: '#ddd',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -32,9 +33,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   actionsContainer: { flex: 1, justifyContent: 'flex-start' },
-  container: { flex: 1 },
   sectionHeader: {
-    color: '#444',
+    color: '#275184',
     padding: 10,
     fontSize: 20,
     fontWeight: '700',

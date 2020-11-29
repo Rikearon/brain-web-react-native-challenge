@@ -2,7 +2,7 @@ import React from 'react';
 import { styles } from '../styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity, View } from 'react-native';
-import { TouchableRipple } from 'react-native-paper';
+
 import { store } from '../../../services/redux/store';
 import { ACTIONS } from '../../../services/redux/actions';
 

@@ -17,6 +17,7 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         counters: state.counters.concat([0]),
+        selectedCounter: !state.counters.length ? 0 : state.selectedCounter,
       };
     case ACTIONS.DELETE_COUNTER:
       return {
@@ -24,7 +25,7 @@ export function reducer(state = initialState, action) {
         counters: state.counters.filter(
           (item, index) => index != state.selectedCounter
         ),
-        selectedCounter: Math.min(state.selectedCounter - 1, 0),
+        selectedCounter: Math.max(state.selectedCounter - 1, 0),
       };
 
     case ACTIONS.INCREMENT_COUNTER:

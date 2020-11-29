@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 const CARD_BORDER_RADIUS = 10;
 
 export const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#0082cb' },
   cardView: {
     flex: 1,
     borderRadius: CARD_BORDER_RADIUS,
@@ -44,7 +45,7 @@ export const styles = StyleSheet.create({
     borderRadius: CARD_BORDER_RADIUS,
   },
   addCardContainer: {
-    backgroundColor: '#77777766',
+    backgroundColor: '#999999aa',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
@@ -53,7 +54,7 @@ export const styles = StyleSheet.create({
     height: 100,
     width: 100,
     borderRadius: 50,
-    backgroundColor: '#cccccc99',
+    backgroundColor: '#cccccc77',
     justifyContent: 'center',
     alignItems: 'center',
   },
