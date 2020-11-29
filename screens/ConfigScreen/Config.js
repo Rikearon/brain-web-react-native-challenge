@@ -18,7 +18,7 @@ const Config = () => {
           <Text style={styles.sectionHeader}>Counters</Text>
           <CountersManager />
         </View>
-        <View style={{ flex: 0.4 }}>
+        <View style={{ flex: 0.6 }}>
           <Text style={styles.sectionHeader}>Selected Counter</Text>
           <CurrentCounterStats />
           <CounterController />

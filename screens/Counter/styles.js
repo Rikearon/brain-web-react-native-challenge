@@ -63,4 +63,19 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingRight: 15,
   },
+  emptyStateImage: {
+    resizeMode: 'cover',
+    width: '80%',
+    maxHeight: 300,
+    borderRadius: 20,
+    overflow: 'hidden',
+    marginTop: 20,
+  },
+  emptyStateLabel: {
+    marginTop: 20,
+    fontSize: 24,
+    color: '#eee',
+    paddingHorizontal: '10%',
+    textAlign: 'center',
+  },
 });
