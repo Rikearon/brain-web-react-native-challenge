@@ -22,6 +22,8 @@ npm install
 
 ### Thanks for the opportunity!
 
+Android APK can be donwloaded [here](https://srv-store4.gofile.io/download/QI5hLm/brainWebChallenge-55a4ec14ea1c400fab4f8db83728ec22-signed.apk)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
