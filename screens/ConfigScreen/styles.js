@@ -5,7 +5,7 @@ const CARD_BORDER_RADIUS = 10;
 export const styles = StyleSheet.create({
   actionButton: {
     borderRadius: CARD_BORDER_RADIUS,
-    marginBottom: 20,
+    marginBottom: 15,
     backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOffset: {
@@ -33,6 +33,12 @@ export const styles = StyleSheet.create({
   },
   actionsContainer: { flex: 1, justifyContent: 'flex-start' },
   container: { flex: 1 },
+  sectionHeader: {
+    color: '#444',
+    padding: 10,
+    fontSize: 20,
+    fontWeight: '700',
+  },
   buttonViewContainer: {
     flexDirection: 'row',
     alignItems: 'center',

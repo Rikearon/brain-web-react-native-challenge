@@ -14,16 +14,21 @@ const Config = () => {
   const Actions = () => {
     return (
       <View style={styles.actionsContainer}>
-        <CountersManager />
-        <CurrentCounterStats />
-        <CounterController />
+        <View style={{ flex: 0.6 }}>
+          <Text style={styles.sectionHeader}>Counters</Text>
+          <CountersManager />
+        </View>
+        <View style={{ flex: 0.4 }}>
+          <Text style={styles.sectionHeader}>Selected Counter</Text>
+          <CurrentCounterStats />
+          <CounterController />
+        </View>
       </View>
     );
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Config screen</Text>
       <Actions />
     </SafeAreaView>
   );

@@ -1,10 +1,14 @@
 import React from 'react';
+import { Text, View } from 'react-native';
+import { connect } from 'react-redux';
 import { styles } from '../styles';
 
 const CurrentCounterStats = ({ count }) => {
   return (
     <View style={styles.actionButton}>
-      <Text>{count}</Text>
+      <View style={{ paddingLeft: 10 }}>
+        <Text style={styles.buttonLabel}>Current count: {count}</Text>
+      </View>
     </View>
   );
 };

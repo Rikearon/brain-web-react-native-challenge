@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#333',
   },
-  counterTitle: { textAlign: 'left', margin: 10 },
+  counterList: { marginTop: 10 },
   flatListContainer: { paddingBottom: 15 },
   overlay: {
     position: 'absolute',
@@ -42,5 +42,24 @@ export const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: '#99999977',
     borderRadius: CARD_BORDER_RADIUS,
+  },
+  addCardContainer: {
+    backgroundColor: '#77777766',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+  },
+  plusButtonContainer: {
+    height: 100,
+    width: 100,
+    borderRadius: 50,
+    backgroundColor: '#cccccc99',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cardTopRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingRight: 15,
   },
 });

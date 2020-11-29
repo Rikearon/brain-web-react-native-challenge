@@ -21,7 +21,9 @@ export function reducer(state = initialState, action) {
     case ACTIONS.DELETE_COUNTER:
       return {
         ...state,
-        counters: state.counters.splice(state.selectedCounter, 1),
+        counters: state.counters.filter(
+          (item, index) => index != state.selectedCounter
+        ),
         selectedCounter: Math.min(state.selectedCounter - 1, 0),
       };
 
